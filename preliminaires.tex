@@ -1,0 +1,51 @@
+\chapter*{Préliminaires}
+Lors de ce stage \texttt{Git} et Maven ont été utilisés sur la plupart des projets. En voici une présentation succinte.
+\addcontentsline{toc}{chapter}{Préliminaires}
+\section*{\texttt{Git}}
+\subsection*{Fonctionnement}
+\texttt{Git} est un système de contrôle de version qui permet la collaboration entre développeurs. Le code source est conservé dans un \textit{dépôt} distant. Il suit un modèle distribué, il n'y a pas de serveur central. Le code est donc accessible par plusieurs sources et peut être utilisé sans connexion. La connexion internet est cependant nécessaire pour envoyer ces modifications sur le dépôt distant. Ce genre de sauvegarde est appelé \textit{commit}. Celle-ci est une version du code à instant donné. \texttt{Git} crée, avec tous les commits, une série d’instantanés qui rend la perte d'information très difficile. 
+
+\texttt{Git} gère également l'intégrité du code. Il peut y avoir des conflits, des parties identiques du code modifiées par deux utlisateurs. \texttt{Git} pointe les régions du code qui sont différentes et les utlisateurs éditent le code pour régler les zones de conflit.
+
+\subsection*{Quelques commandes}
+
+\begin{itemize}
+    \item \texttt{git init} initialise un nouveau dépôt.
+    \item \texttt{git clone} copie un dépôt \texttt{Git} déjà existant.
+    \item \texttt{git add} ajoute les fichiers que l'on veut sauvegarder dans le commit.
+    \item \texttt{git status} affiche l'état des fichiers (ajouté ou non).
+    \item \texttt{git commit} crée un instantané du code en modifiant les fichiers ajoutés avec \texttt{git add}.
+    \item \texttt{git push} envoie les commits sur le dépôt distant.
+\end{itemize}
+
+Seules les commandes \texttt{git clone} et  \texttt{git push} nécessitent une connexion internet. Il est donc très aisé de travailler 
+
+\subsubsection*{GitHub \href{https://github.com/barnabegeffroy}{\faGithub}}
+GitHub est un hébergeur de dépôts \texttt{Git}. Il offre la gestion de version distribuée, la fonctionnalité de gestion de code source de \texttt{Git}, ainsi que ses propres fonctionnalités. Il compte plus de 50 millions d'inscrits et plus de 100 millions de dépôts.
+
+\section*{Maven}
+Maven est un outil de gestion de configuration de projet, en particulier de gestion des dépendances. Il permet de ne pas se soucier de l’environnement de compilation. Les dépendances sont indiquées dans un fichier nommé \texttt{pom.xml}. Grâce à ce fichier Maven configure les bibliothèque et autres dépendances. Maven propose aussi une structure du projet qui sera la même dans chacun des projets exposés. 
+
+Voici l'arborescence de base d'un projet Maven :
+\begin{center}
+    \begin{minipage}[t]{3.5cm}
+        \texttt{pom.xml}\\
+        \texttt{/src}
+        \begin{itemize}
+            \item[] \texttt{/main}
+                  \begin{itemize}
+                      \item[] \texttt{/java}
+                  \end{itemize}\vspace{-0.8ex}
+                  \begin{itemize}
+                      \item[] \texttt{/resources}
+                  \end{itemize}\vspace{-0.8ex}
+            \item[] \texttt{/test}
+                  \begin{itemize}
+                      \item[] \texttt{/java}
+                  \end{itemize}\vspace{-0.8ex}
+                  \begin{itemize}
+                      \item[] \texttt{/resources}
+                  \end{itemize}\vspace{-0.8ex}
+        \end{itemize}
+    \end{minipage}\hfill%
+\end{center}

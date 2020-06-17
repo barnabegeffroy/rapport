@@ -1,0 +1,19 @@
+\babel@toc {french}{}
+\contentsline {chapter}{Pr\IeC {\'e}liminaires}{1}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Gestion des pr\IeC {\'e}sences}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Attendance}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}JeSuisEnCours}{2}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Plaquette-MIDO}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}L'authentification}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}La classe Authentication}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Le projet CredsRead}{3}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}L'automatisation du lancement du code}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Travis-CI}{3}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}L'ex\IeC {\'e}cution du code}{4}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}CredsRead}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Diagramme de classe}{6}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Jugement d\IeC {\'e}lib\IeC {\'e}r\IeC {\'e}}{7}{chapter.4}%
+\contentsline {part}{Annexes}{ii}{part*.18}%
+\contentsline {chapter}{Annexe 1}{ii}{chapter*.19}%
+\contentsline {section}{\numberline {1}Partie 1}{ii}{section.4.1}%
+\contentsline {chapter}{Annexe 2}{iv}{chapter*.22}%

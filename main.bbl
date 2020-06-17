@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{noauthor_bash_nodate}
+Bash reference manual.
+
+\bibitem{noauthor_jekyll_2017}
+Jekyll theme for documentation.
+\newblock page 190.
+
+\bibitem{airiau_introduction_nodate}
+Stéphane Airiau.
+\newblock Introduction à la programmation en java - cours 11.
+\newblock page~46.
+
+\bibitem{cailloux_git_2018}
+Olivier Cailloux.
+\newblock Git.
+
+\bibitem{cailloux_maven_2020}
+Olivier Cailloux.
+\newblock Maven.
+
+\bibitem{cailloux_formal_2020}
+Olivier Cailloux and Yves Meinard.
+\newblock A formal framework for deliberated judgment.
+\newblock 88(2):269--295.
+
+\bibitem{cailloux_deliberated_2020}
+Olivier Cailloux, Yves Meinard, and Nicolas Salliou.
+\newblock Deliberated diet.
+
+\end{thebibliography}
