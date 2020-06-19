@@ -5,16 +5,23 @@ L'offre de stage\footnote{\href{https://github.com/Dauphine-MIDO/M1-app/blob/mas
 
 \section{Attendance}
 
-Le projet Attendance avait donc pour but de développer une application web liée à la gestion des présences des élèves. Le serveur HTTP Eclipse Jetty, 
+Le projet Attendance avait donc pour but de développer une application web permettant au professeur de faire l'appel de sa classe et d'envoyer les données à l'administration. Dans un premier temps, j'ai conçu une application lisant un fichier JSON\footnote{JSON est un format réprésentant les données de manière structurée.} contenant une liste d'élèves et affichant celle-ci de manière à faire l'appel. Pour cela,  le serveur HTTP Eclipse Jetty fournit les services web pour des applications Java. Le projet Attendance contient ainsi une classe \texttt{StudentsList} qui créé un fichier JSON contenant la liste des élèves. Une classe \texttt{RecordAttendance} récupère la liste et l'affiche dans une page HTML (voir Figure~\ref{attendance}). Cette classe permet aussi de récupérer les informations entrées par l'utilisateur (les élèves absents cochés par le professeur).
 
-\begin{figure}[!h]
-    \begin{center}
-    %taille de l'image en largeur
-    %remplacer "width" par "height" pour régler la hauteur
-    \includegraphics[width=5cm]{assets/attendance.PNG}
-    \end{center}
-    %légende de l'image
-    \caption{Enveloppe d'un son}
+
+
+\begin{figure}[h]
+    \begin{minipage}{0.5\textwidth}
+        \lstinputlisting[language=XML]{./assets/students.json}
+        \caption*{Fichier JSON}
+        \label{json}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=5cm]{assets/attendance.PNG}
+            \caption{Page HTML généré par \texttt{RecordAttendance}}
+            \label{attendance}        
+        \end{center}
+    \end{minipage}
 \end{figure}
 
 \section{JeSuisEnCours}

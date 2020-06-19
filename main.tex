@@ -5,9 +5,16 @@
 \usepackage{chngcntr}
 \counterwithout{footnote}{chapter}
 
+
+\usepackage[french]{babel}
+
 \usepackage{fontawesome}
 
 \usepackage{xcolor}
+
+
+\usepackage{authblk}
+\usepackage{caption}
 \usepackage{listings}
 \lstset{basicstyle=\ttfamily,
   showstringspaces=false,
@@ -20,33 +27,19 @@
   breaklines=true,
   breakatwhitespace=false
 }
-
-\usepackage{authblk}
-\usepackage{caption}
-\usepackage[french]{babel}
 \usepackage[utf8x]{inputenc}
-%pour gérer les positionnement d'images
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{url}
-%pour les informations sur un document compilé en PDF et les liens externes / internes
 \usepackage{hyperref}
-%pour la mise en page des tableaux
 \usepackage{array}
 \usepackage{tabularx}
-%pour utiliser \floatbarrier
-%\usepackage{placeins}
-%\usepackage{floatrow}
-%espacement entre les lignes
 \usepackage{setspace}
-%modifier la mise en page de l'abstract
 \usepackage{abstract}
-%police et mise en page (marges) du document
 \usepackage[T1]{fontenc}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
-%Pour les galerie d'images
 \usepackage{subfig}
 
 %====================== INFORMATION ET REGLES ======================
@@ -55,26 +48,22 @@
 
 \addto\captionsfrench{%
   \renewcommand\chaptername{Projet}}
-%rajouter les numérotation pour les \paragraphe et \subparagraphe
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{1}
 
-\hypersetup{							% Information sur le document
-pdfauthor = {Barnabé Geffroy},			% Auteurs
-pdftitle = {Rapport de stage},			% Titre du document
-pdfsubject = {Rapport de stage},		% Sujet
-pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
-%pdfcreator = {MikTeX},% Logiciel qui a crée le document
-%pdfproducer = {}} % Société avec produit le logiciel
+\hypersetup{
+pdfauthor = {Barnabé Geffroy},
+pdftitle = {Rapport de stage},
+pdfsubject = {Rapport de stage},
+pdfstartview={FitH}}
 
 %======================== DEBUT DU DOCUMENT ========================
 
 \begin{document}
 
-%régler l'espacement entre les lignes
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-%page de garde
+
 \input{./title.tex}
 
 
@@ -82,20 +71,17 @@ pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
 \tableofcontents
 \thispagestyle{empty}
 \setcounter{page}{0}
-%ne pas numéroter le sommaire
 
 \setlength\parindent{0pt}
 \input{./introduction.tex}
 
-%espacement entre les lignes d'un tableau
 \renewcommand{\arraystretch}{1.5}
 
 \setlength\parindent{0pt}
-%====================== INCLUSION DES PARTIES ======================
+%====================== PARTIES ======================
 
 ~
 \thispagestyle{empty}
-%recommencer la numérotation des pages à "1"
 \setcounter{page}{0}
 \newpage
 
@@ -122,9 +108,7 @@ pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
 
 %choix du style de la biblio
 \bibliographystyle{plain}
-%inclusion de la biblio
 \bibliography{bibliographie.bib}
-%voir wiki pour plus d'information sur la syntaxe des entrées d'une bibliographie
 \thispagestyle{empty}
 \setcounter{page}{0}
 

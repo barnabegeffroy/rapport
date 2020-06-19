@@ -1,27 +1,9 @@
 \chapter[Plaquette-MIDO]{Plaquette-MIDO\raisebox{.3\baselineskip}{\normalsize\footnotemark}}
 \footnotetext{\url{https://github.com/Dauphine-MIDO/plaquette-MIDO}}
 
-Ce projet a pour but d'implémenter un code générant un fichier PDF détaillant les différents enseignements du Master 1 MIAGE en apprentissage à partir de la base de données de Dauphine. La finalité est d'automatiser le lancement du code du sorte que quotidiennement le fichier PDF soit mis à jour et publié en ligne.
+Ce projet a pour but d'implémenter un code générant un fichier PDF détaillant les différents enseignements du Master 1 MIAGE en apprentissage à partir de la base de données de Dauphine. La finalité est d'automatiser le lancement du code de sorte que quotidiennement le fichier PDF soit mis à jour et publié en ligne.
 
-À mon arrivée, un code permettait déjà la génération du fichier PDF. Certains passages du code était cependant à revoir pour améliorer l'esthétique du fichier PDF. De plus, le code initial était très peu généralisé à d'autres utilisateurs et plusieurs changements dans le code était nécessaire pour qu'un autre utilisateur puisse lancer Plaquette-MIDO. Il fallait donc davantage généraliser le code de façon à rendre accessible le code à d'autres utilisateurs. Le principal aspect à généraliser était l'authentification à l'API de Dauphine, indispensable pour avoir accès aux données de l'université.
-
-\section{L'authentification}
-
-Pour se connecter à l'API de Dauphine, un nom d'utilisateur et un mot de passe sont nécessaires. Le code initial prévoyait trois manières différentes de fournir ces informations afin de se connecter à l'API :
-\begin{itemize}
-    \item les propriétés du système
-    \item les variables d'environnement
-    \item un fichier texte contenant les informations nécessaires
-\end{itemize}
-
-Seulement, ce code ne lisait initialement que le mot de passe et le nom d'utilisateur était une valeur par défaut. Un nouvel utilisateur devait donc modifier le code pour pouvoir utiliser ses identifiants. L'idée d'une valeur par défaut pour le nom d'utilisateur a donc abandonné pour rendre le programme plus accessible. La valeur du nom d'utilisateur serait lue de la même manière que celle du mot de passe.
-
-\subsection{La classe Authentication}
-
-Une nouvelle classe a donc été créée pour permettre la généralisation lecture du code et améliorer sa lisibilité. Celle-ci permet de créer un objet contenant un nom d'utilisateur et un mot de passe de type Optional. Ce type permet d'instancer aussi bien la valeur d'une chaîne de caractère que l'absence d'une information. Il permet ainsi de 
-
-\subsection{Le projet CredsRead}
-La généralisation du code permettant l'authentification nous a poussé à le séparer dans un projet bien distinct de Plaquette-MIDO, le projet CredsRead. Celui-ci sera ensuite intégré au code source de Plaquette-MIDO.
+À mon arrivée, un code permettait déjà la génération du fichier PDF. Certains passages du code était cependant à revoir pour améliorer l'esthétique du fichier PDF. De plus, le code initial était très peu généralisé à d'autres utilisateurs et plusieurs changements dans le code était nécessaire pour qu'un autre utilisateur puisse lancer Plaquette-MIDO. Il fallait donc davantage généraliser le code de façon à rendre accessible le code à d'autres utilisateurs. Le principal aspect à généraliser était l'authentification à l'API de Dauphine\footnote{Une API est une interface de programmation d’application qui permet d'accéder à un ensemble de classes, méthodes, fonctions et autres données. Dans le cas de Dauphine, son API donne accès aux fonctions informatiques permettant de manipuler le programme des cours des différentes formations}, indispensable pour avoir accès aux données de l'université.
 
 \section{L'automatisation du lancement du code}
 
@@ -42,26 +24,24 @@ La finalité du projet Plaquette-MIDO est de lancer la construction du fichier P
     exécuter le code source permettant la création du fichier PDF et ensuite
     déployer ce fichier vers un dépôt GitHub.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \begin{center}
-    %taille de l'image en largeur
-    %remplacer "width" par "height" pour régler la hauteur
-    \includegraphics[width=13cm]{assets/travis-ci.PNG}
+        \includegraphics[width=11cm]{assets/travis-ci.PNG}
     \end{center}
-    %légende de l'image
-    \caption{Enveloppe d'un son}
+    \caption{Capture d'écran de l'interface de Travis-CI}
+    \label{travis}
 \end{figure}
 
+La figure~\ref{travis} montre que la construction du commit \texttt{just push logs} a échoué pour le dépôt \texttt{plaquette}, tandis que celle du dépôt \texttt{vegan\_or\_not} a réussi.
 
-Travis-CI permet également de référencer des variables d'environnement sécurisées (clefs d'accès, identifiants,...)
-\begin{figure}[!h]
+Travis-CI permet également de référencer des variables d'environnement sécurisées (clefs d'accès, identifiants, ...).
+\begin{figure}[!ht]
     \begin{center}
-    %taille de l'image en largeur
-    %remplacer "width" par "height" pour régler la hauteur
-    \includegraphics[width=13cm]{assets/env.PNG}
+    \includegraphics[width=0.85\textwidth]{assets/env.PNG}
+    \caption{Différentes variables d'environnement entréees pour la construction Travis-CI d'un dépôt}
+    \label{env}
     \end{center}
-    %légende de l'image
-    \caption{Enveloppe d'un son}
+
 \end{figure}
 
 \subsection{L'exécution du code}
@@ -69,23 +49,50 @@ Travis-CI permet également de référencer des variables d'environnement sécur
 
 
 
-Travis-CI identifie automatiquement un projet Maven et installe les dépendances indiquées dans le \texttt{pom.xml}. Dans le projet Plaquette-MIDO, la dépendance qui importe le code source de l'API de Dauphine nécessite un fichier texte nommé \texttt{WSDL\_Login.txt} contenant un URL spécifique des identifiants de l'utilisateur. Ce fichier ne peut pas être dans le dépôt car il contient des informations personnelles. Il faut donc un script qui crée le fichier sur la machine virtuelle de Travis-CI. Avant de lancer l'installation des dépendances le fichier doit donc être créer. Dans le \texttt{.travis.yml}, on peut ajouter un script qui génère ce fichier.
+Travis-CI identifie automatiquement un projet Maven et installe les dépendances indiquées dans le \texttt{pom.xml}. Dans le projet Plaquette-MIDO, la dépendance qui importe le code source de l'API de Dauphine nécessite un fichier texte nommé \texttt{WSDL\_Login.txt} contenant un URL spécifique des identifiants de l'utilisateur. Ce fichier ne peut pas être dans le dépôt car il contient des informations personnelles. Il faut donc un script qui crée le fichier sur la machine virtuelle de Travis-CI. Avant de lancer l'installation des dépendances le fichier doit donc être créé. Dans le \texttt{.travis.yml}, on peut ajouter un script qui génère ce fichier. 
+
+Voici ci-dessous un extrait du script permettant la création d'un tel fichier. On y retrouve les variables d'environnement présentés dans la figure~\ref{env}.
+
+\lstinputlisting[language=bash, firstline=18]{./assets/writeWSDL}
 
 \subsubsection*{Création du fichier PDF et déploiement}
-Une fois que toutes les dépendances du projet Maven sont installées, il faut executé le code source qui génère le fichier PDF. La méthode main a executé se trouve dans la classe \texttt{M1ApprBuilder.java}. Le déploiement vers le dépôt d'arrivée doit également être pris en compte. Voici le script exécuté par Travis-CI pour réaliser ce travail :
+Une fois que toutes les dépendances du projet Maven sont installées, il faut executé le code source qui génère le fichier PDF. La classe qui permet cette génération est \texttt{M1ApprBuilder}. Le script de Travis-CI va donc executer cette classe, il faudra ensuite déployer vers un dépôt d'arrivée le fichier PDF ainsi que le logs de la construction. La construction de Travis-CI doit échouer si le fichier PDF n'est pas généré. Néanmoins, dans tous les cas les logs doivent être poussés vers le dépôt. Ainsi, si le fichier PDF est généré, il est poussé avec les logs vers le dépôt d'arrivée. Si ce n'est pas le cas, la construction échoue, le dernier PDF déployé reste disponible. Nous sommmes avertis immédiatement par e-mail de cet échec. Les logs du code source de Plaquette-MIDO ainsi que ceux de Travis-CI permettront alors rendre la compréhension de l'échec.
+
+Vous trouverez le script exécuté par Travis-CI dans l'annexe à . Le script exécute plusieurs fontions :
+
+\begin{itemize}
+    \item \texttt{clean} (l.20 à 24), supprime les fichiers déjà existants.
+    \item \texttt{get\_current\_deploy} (l.26 à 30), copie sur la machine virtuelle de Travis-CI le dépôt dans lequel les fichiers vont être déployés. Pour éviter de cloner un dépôt \texttt{Git} dans un autre dépôt \texttt{Git}, celui est cloné dans le dossier parent de Plaquette-MIDO de la machine virtuelle \texttt{"../\${REPO}"}.
+    \item \texttt{build\_doc} (l.31 à 41), essaie de générer le document en exécutant \texttt{M1ApprBuilder}. Elle met aussi à jour la variable \texttt{BUILT\_EXIT\_CODE} qui prend la valeur 0 si le code est correctement exécuté et que le fichier PDF est généré, ou prend la valeur 1 sinon.
+    \item \texttt{deploy} (l.43 à 60), déplace les logs et le fichier PDF (s'il y en a un) vers le dépôt d'arrivée (\texttt{"../\${REPO}"}). Les différentes commandes \texttt{Git} présentées ultérieurement sont alors executées pour déployer les fichiers déplacés.\\ La dernière ligne \texttt{exit \${BUILT\_EXIT\_CODE}} renvoie à Travis-CI la valeur mis à jour dans \texttt{build\_doc}. Si la valeur est 0, la construction contiue et s'achève par un succès. Sinon la construction échoue et une notification est envoyée pour prévenir les développeurs.
+\end{itemize}
 
 
 \subsubsection*{Automatisation}
-Travis-CI lance initiallement la construction du code à chaque nouveau commit. Il est cependant possible de configurer des \textit{Cron Jobs}. Ceux-ci vont renouveler la construction du code de manière quotidienne, hebdomadaire ou mensuelle. 
+Travis-CI lance initiallement la construction du code du dépôt à chaque nouveau commit. Il est cependant possible de configurer des \textit{Cron Jobs}. Ceux-ci vont renouveler la construction du code de manière quotidienne, hebdomadaire ou mensuelle. 
 
-\begin{figure}[!h]
-    \begin{center}
-    %taille de l'image en largeur
-    %remplacer "width" par "height" pour régler la hauteur
-    \includegraphics[width=13cm]{assets/CronJobs.PNG}
+\begin{figure}[!ht]
+    \begin{center}\includegraphics[width=\textwidth]{assets/CronJobs.PNG}
     \end{center}
-    %légende de l'image
-    \caption{Enveloppe d'un son}
+    \caption{Les \textit{Cron Jobs} de Travis-CI, ici la construction est programmé quotidiennement}
 \end{figure}
 
 En programmant sur \textit{Daily}, Travis-CI va relancer la construction du code tous les jours et ainsi renouveller le fichier PDF et les logs si des changements sont effectués. Si une erreur se produit et que le fichier PDF n'est pas généré, une e-mail nous previendra de la non-construction du code et le fichier PDF le plus récent sera toujours disponible sur le site.
+
+\section{L'authentification}
+
+Pour se connecter à l'API de Dauphine, un nom d'utilisateur et un mot de passe sont nécessaires. Le code initial prévoyait trois manières différentes de fournir ces informations afin de se connecter à l'API :
+\begin{itemize}
+    \item les propriétés du système
+    \item les variables d'environnement
+    \item un fichier texte contenant les informations nécessaires
+\end{itemize}
+
+Seulement, ce code ne lisait initialement que le mot de passe et le nom d'utilisateur était une valeur par défaut. Un nouvel utilisateur devait donc modifier le code pour pouvoir utiliser ses identifiants. L'idée d'une valeur par défaut pour le nom d'utilisateur a donc abandonné pour rendre le programme plus accessible. La valeur du nom d'utilisateur serait lue de la même manière que celle du mot de passe.
+
+\subsection{La classe Authentication}
+
+Une nouvelle classe, \texttt{Authentication}, a donc été créée pour permettre la généralisation lecture du code et améliorer sa lisibilité. Celle-ci permet de créer un objet contenant un nom d'utilisateur et un mot de passe de type Optional. Ce type permet d'instancer aussi bien la valeur d'une chaîne de caractère que l'absence d'une information. Cette classe \texttt{Authentication} est lu dans une autre classe, \texttt{QueriesHelper}, qui permet de revoyer les informations nécessaires pour se connecter à l'API. L'introduction de la classe \texttt{Authentication} permet ainsi de détecter si le nom d'utilisateur ou le mot de passe manquent et alors jeté une exception appropriée faisant échoué l'exécution du code. 
+
+\subsection{Le projet CredsRead}
+La généralisation du code permettant l'authentification nous a poussé à le séparer dans un projet bien distinct de Plaquette-MIDO, le projet CredsRead. En effet, les méthodes de \texttt{QueriesHelper} ainsi que la classe \texttt{Authentication} n'avait, en grande partie, aucun lien spécifique avec plaquette-MIDO et pouvait ainsi être totalement publié dans un autre projet pour pouvoir être réutilisé plus facilement ce code dans d'autres projets. Le projet Creds-Read a ensuite été intégré au code source de Plaquette-MIDO.

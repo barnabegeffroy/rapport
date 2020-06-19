@@ -1,5 +1,5 @@
-\chapter*{Annexe 1}
-\addcontentsline{toc}{chapter}{Annexe 1}
+\chapter*{Codes Plaquette-MIDO}
+\addcontentsline{toc}{chapter}{Codes Plaquette-MIDO}
 
 %changer le format des sections, subsections pour apparaittre sans le num de chapitre
 \makeatletter
@@ -9,14 +9,13 @@
 %recommencer la numérotation des section à "1"
 \setcounter{section}{0}
 
-Intro
-
-\section{Partie 1}
-
-Bla
+\section*{Scripts pour Travis-CI}
 
 \subsection*{writeWSDL.sh}
-\lstinputlisting[language=bash, firstline=18]{./assets/writeWSDL.sh}
+\lstinputlisting[language=bash]{./assets/writeWSDL}
+
+\vspace{1cm}
 
 \subsection*{cibuild.sh}
-\lstinputlisting[language=bash]{./assets/cibuild.sh}
+\label{sec:cibuild}
+\lstinputlisting[language=bash]{./assets/cibuild}
