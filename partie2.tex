@@ -37,7 +37,7 @@ La figure~\ref{travis} montre que la construction du commit \texttt{just push lo
 Travis-CI permet également de référencer des variables d'environnement sécurisées (clefs d'accès, identifiants, ...).
 \begin{figure}[!ht]
     \begin{center}
-    \includegraphics[width=0.85\textwidth]{assets/env.PNG}
+    \includegraphics[width=0.8\textwidth]{assets/env.PNG}
     \caption{Différentes variables d'environnement entréees pour la construction Travis-CI d'un dépôt}
     \label{env}
     \end{center}
@@ -53,12 +53,15 @@ Travis-CI identifie automatiquement un projet Maven et installe les dépendances
 
 Voici ci-dessous un extrait du script permettant la création d'un tel fichier. On y retrouve les variables d'environnement présentés dans la figure~\ref{env}.
 
-\lstinputlisting[language=bash, firstline=18]{./assets/writeWSDL}
+\begin{figure}[!ht]
+    \lstinputlisting[language=bash, firstline=18]{./assets/writeWSDL}
+    \caption*{Extrait de writeWSDL.sh, annexe~\ref{sec:writeWSDL} }
+\end{figure}
 
 \subsubsection*{Création du fichier PDF et déploiement}
 Une fois que toutes les dépendances du projet Maven sont installées, il faut executé le code source qui génère le fichier PDF. La classe qui permet cette génération est \texttt{M1ApprBuilder}. Le script de Travis-CI va donc executer cette classe, il faudra ensuite déployer vers un dépôt d'arrivée le fichier PDF ainsi que le logs de la construction. La construction de Travis-CI doit échouer si le fichier PDF n'est pas généré. Néanmoins, dans tous les cas les logs doivent être poussés vers le dépôt. Ainsi, si le fichier PDF est généré, il est poussé avec les logs vers le dépôt d'arrivée. Si ce n'est pas le cas, la construction échoue, le dernier PDF déployé reste disponible. Nous sommmes avertis immédiatement par e-mail de cet échec. Les logs du code source de Plaquette-MIDO ainsi que ceux de Travis-CI permettront alors rendre la compréhension de l'échec.
 
-Vous trouverez le script exécuté par Travis-CI dans l'annexe à . Le script exécute plusieurs fontions :
+Vous trouverez le script exécuté par Travis-CI dans l'annexe~\ref{sec:cibuild}. Le script exécute plusieurs fontions :
 
 \begin{itemize}
     \item \texttt{clean} (l.20 à 24), supprime les fichiers déjà existants.
