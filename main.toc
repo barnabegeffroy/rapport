@@ -24,15 +24,21 @@
 \contentsline {section}{\numberline {4.2}Cr\IeC {\'e}ation d'un site web}{9}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}WordPress}{9}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Jekyll}{10}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}D\IeC {\'e}ploiement sur Internet}{10}{section.4.3}%
-\contentsline {section}{\numberline {4.4}D\IeC {\'e}tails techniques}{10}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Google Guava}{11}{chapter.5}%
-\contentsline {part}{Annexes}{i}{chapter*.20}%
-\contentsline {chapter}{Codes Plaquette-MIDO}{ii}{chapter*.22}%
-\contentsline {section}{\numberline {1}Scripts pour Travis-CI}{ii}{section.5.1}%
-\contentsline {subsection}{\numberline {1.1}writeWSDL.sh}{ii}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {1.2}cibuild.sh}{ii}{subsection.5.1.2}%
-\contentsline {chapter}{Codes CredsRead}{iv}{chapter*.23}%
-\contentsline {section}{\numberline {2}Classe CredsReader}{iv}{section.5.2}%
-\contentsline {subsection}{\numberline {2.1}M\IeC {\'e}thode readCredentials()}{iv}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {2.2}M\IeC {\'e}thode getCredentials()}{v}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Fonctionnement}{10}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Th\IeC {\`e}mes}{11}{subsubsection.4.2.2.2}%
+\contentsline {section}{\numberline {4.3}D\IeC {\'e}ploiement sur Internet}{11}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Jekyll}{11}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}WordPress}{12}{subsection.4.3.2}%
+\contentsline {part}{Annexes}{i}{chapter*.24}%
+\contentsline {chapter}{Codes Plaquette-MIDO}{ii}{chapter*.26}%
+\contentsline {section}{\numberline {1}Scripts pour Travis-CI}{ii}{section.4.1}%
+\contentsline {subsection}{\numberline {1.1}writeWSDL.sh}{ii}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {1.2}cibuild.sh}{ii}{subsection.4.1.2}%
+\contentsline {chapter}{Codes CredsRead}{iv}{chapter*.27}%
+\contentsline {section}{\numberline {2}Classe CredsReader}{iv}{section.4.2}%
+\contentsline {subsection}{\numberline {2.1}M\IeC {\'e}thode readCredentials()}{iv}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {2.2}M\IeC {\'e}thode getCredentials()}{v}{subsection.4.2.2}%
+\contentsline {chapter}{Codes Jugement D\IeC {\'e}lib\IeC {\'e}r\IeC {\'e}}{vi}{chapter*.28}%
+\contentsline {section}{\numberline {3}Jekyll}{vi}{section.4.3}%
+\contentsline {subsection}{\numberline {3.1}Exemple de code HTML g\IeC {\'e}n\IeC {\'e}r\IeC {\'e} par Jekyll}{vi}{subsection.4.3.1}%
+\contentsline {chapter}{Bibliographie}{}{chapter*.29}%
