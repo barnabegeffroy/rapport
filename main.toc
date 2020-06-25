@@ -1,34 +1,37 @@
 \babel@toc {french}{}
-\contentsline {chapter}{Pr\IeC {\'e}liminaires}{1}{chapter*.3}%
-\contentsline {chapter}{\numberline {1}Gestion des pr\IeC {\'e}sences}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Attendance}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}JeSuisEnCours}{2}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Plaquette-MIDO}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}L'automatisation du lancement du code}{3}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Travis-CI}{3}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}L'ex\IeC {\'e}cution du code}{4}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}L'authentification}{5}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}La classe Authentication}{5}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Le projet CredsRead}{5}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}CredsRead}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Diagramme de classe}{6}{section.3.1}%
+\contentsline {chapter}{Introduction}{1}{chapter*.2}%
+\contentsline {chapter}{Pr\IeC {\'e}liminaires}{2}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Gestion des pr\IeC {\'e}sences}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Attendance}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}JeSuisEnCours}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Plaquette-MIDO}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}L'automatisation du lancement du code}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Travis-CI}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}L'ex\IeC {\'e}cution du code}{5}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}L'authentification}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}La classe Authentication}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Le projet CredsRead}{6}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}CredsRead}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Diagramme de classe}{7}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Les diff\IeC {\'e}rentes classes}{7}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}\texttt {CredsOpt}}{7}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}\texttt {Credentials}}{7}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}\texttt {CredsReader}}{7}{subsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}\texttt {readCredentials()}}{7}{subsubsection.3.2.3.1}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}\texttt {getCredentials()}}{8}{subsubsection.3.2.3.2}%
-\contentsline {section}{\numberline {3.3}Int\IeC {\'e}gration \IeC {\`a} plaquette-MIDO}{8}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Jugement d\IeC {\'e}lib\IeC {\'e}r\IeC {\'e}, les r\IeC {\'e}gimes alimentaires}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Protocole de l'exp\IeC {\'e}rience}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Cr\IeC {\'e}ation d'un site web}{9}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}WordPress}{9}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Jekyll}{10}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}Fonctionnement}{10}{subsubsection.4.2.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Th\IeC {\`e}mes}{11}{subsubsection.4.2.2.2}%
-\contentsline {section}{\numberline {4.3}D\IeC {\'e}ploiement sur Internet}{11}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Jekyll}{11}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}WordPress}{12}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {3.2.2}\texttt {Credentials}}{8}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}\texttt {CredsReader}}{8}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}\texttt {readCredentials()}}{8}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}\texttt {getCredentials()}}{9}{subsubsection.3.2.3.2}%
+\contentsline {section}{\numberline {3.3}Int\IeC {\'e}gration \IeC {\`a} plaquette-MIDO}{9}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Jugement d\IeC {\'e}lib\IeC {\'e}r\IeC {\'e}, les r\IeC {\'e}gimes alimentaires}{10}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Protocole de l'exp\IeC {\'e}rience}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Cr\IeC {\'e}ation d'un site web}{10}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}WordPress}{10}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Jekyll}{11}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Fonctionnement}{11}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Th\IeC {\`e}mes}{12}{subsubsection.4.2.2.2}%
+\contentsline {section}{\numberline {4.3}D\IeC {\'e}ploiement sur Internet}{12}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Jekyll}{12}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}WordPress}{13}{subsection.4.3.2}%
+\contentsline {chapter}{Remerciements}{14}{chapter*.23}%
+\contentsline {chapter}{Conclusion}{14}{chapter*.24}%
 \contentsline {part}{Annexes}{i}{chapter*.24}%
 \contentsline {chapter}{Codes Plaquette-MIDO}{ii}{chapter*.26}%
 \contentsline {section}{\numberline {1}Scripts pour Travis-CI}{ii}{section.4.1}%

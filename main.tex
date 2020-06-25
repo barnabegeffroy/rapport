@@ -2,11 +2,11 @@
 
 %====================== PACKAGES ======================
 
-\usepackage{chngcntr}
-\counterwithout{footnote}{chapter}
-
 
 \usepackage[french]{babel}
+
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
 
 \usepackage{fontawesome}
 
@@ -57,6 +57,22 @@ pdftitle = {Rapport de stage},
 pdfsubject = {Rapport de stage},
 pdfstartview={FitH}}
 
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+% --- Patch \chapter
+\patchcmd{\@makechapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER X
+\patchcmd{\@makechapterhead}{20\p@}{\chapheadsep}{}{}% Space between CHAPTER X and CHAPTER TITLE
+\patchcmd{\@makechapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
+% --- Patch \chapter*
+\patchcmd{\@makeschapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER TITLE
+\patchcmd{\@makeschapterhead}{40\p@}{\chapheadbelowskip}{}{}% SPace between CHAPTER TITLE and text
+\makeatother
+% Set new lengths
+\newlength{\chapheadtopskip}\setlength{\chapheadtopskip}{-20pt}
+\newlength{\chapheadsep}\setlength{\chapheadsep}{15pt}
+\newlength{\chapheadbelowskip}\setlength{\chapheadbelowskip}{15pt}
+
 %======================== DEBUT DU DOCUMENT ========================
 
 \begin{document}
@@ -72,18 +88,19 @@ pdfstartview={FitH}}
 \thispagestyle{empty}
 \setcounter{page}{0}
 
-\setlength\parindent{0pt}
-\input{./introduction.tex}
 
 \renewcommand{\arraystretch}{1.5}
 
-\setlength\parindent{0pt}
-%====================== PARTIES ======================
 
+%====================== PARTIES ======================
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.7em}
 ~
 \thispagestyle{empty}
 \setcounter{page}{0}
 \newpage
+
+\input{./introduction.tex}
 
 \input{./preliminaires.tex}
 
@@ -106,8 +123,7 @@ pdfstartview={FitH}}
 %récupérer les citation avec "/footnotemark"
 \nocite{*}
 
-%choix du style de la biblio
-\bibliographystyle{plain}
+\bibliographystyle{./IEEEtran-francais.bst}
 \bibliography{bibliographie.bib}
 \thispagestyle{empty}
 \setcounter{page}{0}
